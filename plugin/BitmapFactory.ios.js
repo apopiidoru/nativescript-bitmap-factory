@@ -300,7 +300,7 @@ iOSImage.prototype._resize = function(newSize) {
 
     try {
         var ns = CGSizeMake(newSize.width, newSize.height);
-        UIGraphicsBeginImageContextWithOptions(ns, false, 0.0);
+        UIGraphicsBeginImageContextWithOptions(ns, false, 1.0);
 
         oldImg.drawInRect(CGRectMake(0, 0,
                                      ns.width, ns.height));
@@ -510,7 +510,7 @@ iOSImage.asBitmap = asBitmapObject;
 function createBitmap(width, height, opts) {
     var img = new interop.Reference();
 
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(width, height), false, 0.0);
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(width, height), false, 1.0);
     img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
